@@ -3,7 +3,7 @@ services:
 
   backend:
     container_name: backend
-    image: myounis789/backendtest:latest
+    image: myounis789/rest2:latest
     build: ./spring-petclinic-rest
     ports:
       - published: 9966
@@ -11,7 +11,7 @@ services:
 
   frontend:
     container_name: frontend
-    image: myounis789/frontendtest:latest
+    image: myounis789/angular:latest
     build: ./spring-petclinic-angular
     ports:
       - published: 4200
@@ -21,7 +21,7 @@ services:
 
   nginx:
     container_name: nginx
-    image: myounis789/nginxtest:latest
+    image: myounis789/nginxpetclinic:latest
     build: ./NGINX
     ports:
       - published: 80
@@ -36,7 +36,7 @@ services:
   mysql:
     container_name: MySQL
     build: ./mysql
-    image: myounis789/mysqltest:latest
+    image: myounis789/mysql:latest
     ports:
     - target: 3306
       published: 3306
